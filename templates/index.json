@@ -27,7 +27,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "clean beauty · luxury · minimalist — made for Conscious beauty consumers aged 25-45.",
+            "text": "minimal · luxury · clean — made for Discerning women aged 30-55 who invest.",
             "text_style": "subtitle"
           }
         },
@@ -55,7 +55,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Clean beauty  ·  Luxury  ·  Minimalist  ·  Sustainable</strong></p>"
+            "text": "<p><strong>Minimal  ·  Luxury  ·  Clean</strong></p>"
           }
         }
       },
@@ -124,8 +124,8 @@
         "col_1": {
           "type": "column",
           "settings": {
-            "title": "Clean beauty",
-            "text": "LUMIÈRE starts with clean beauty as the foundation for everything we do."
+            "title": "Minimal",
+            "text": "LUMIÈRE starts with minimal as the foundation for everything we do."
           }
         },
         "col_2": {
@@ -138,8 +138,8 @@
         "col_3": {
           "type": "column",
           "settings": {
-            "title": "Minimalist",
-            "text": "minimalist matters. We don't ship anything we wouldn't keep for ourselves."
+            "title": "Clean",
+            "text": "clean matters. We don't ship anything we wouldn't keep for ourselves."
           }
         }
       },
@@ -170,7 +170,7 @@
       "settings": {
         "title": "Best Sellers",
         "heading_size": "h2",
-        "description": "<p>Our best-selling luxury — made with clean beauty.</p>",
+        "description": "<p>Our best-selling luxury — made with minimal.</p>",
         "show_description": true,
         "description_style": "subtitle",
         "collection": "all",
@@ -206,7 +206,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>LUMIÈRE was built on a simple idea: clean beauty and luxury shouldn't be mutually exclusive. Read about how we got here.</p>",
+            "text": "<p>LUMIÈRE was built on a simple idea: minimal and luxury shouldn't be mutually exclusive. Read about how we got here.</p>",
             "text_style": "body"
           }
         },
@@ -237,6 +237,90 @@
         "mobile_content_alignment": "left",
         "padding_top": 64,
         "padding_bottom": 64
+      }
+    },
+    "editorial_story_2": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Ritual, Not Routine.",
+            "heading_size": "h2"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Clean design doesn't happen by accident. Every decision at LUMIÈRE starts with the question: does this make it better?</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "scheme-3",
+        "section_color_scheme": "scheme-3",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "brand_values_cols": {
+      "type": "multicolumn",
+      "blocks": {
+        "val_1": {
+          "type": "column",
+          "settings": {
+            "title": "Minimal",
+            "text": "We don't cut corners. Minimal is the baseline, not the exception."
+          }
+        },
+        "val_2": {
+          "type": "column",
+          "settings": {
+            "title": "Luxury",
+            "text": "Every piece reflects the attention that LUMIÈRE puts into its work."
+          }
+        },
+        "val_3": {
+          "type": "column",
+          "settings": {
+            "title": "Clean",
+            "text": "Purpose-led from the first sketch. Nothing ships without reason."
+          }
+        }
+      },
+      "block_order": [
+        "val_1",
+        "val_2",
+        "val_3"
+      ],
+      "settings": {
+        "title": "What LUMIÈRE Stands For",
+        "heading_size": "h2",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 72,
+        "padding_bottom": 72
       }
     },
     "social_proof": {
@@ -305,6 +389,8 @@
     "forge_features",
     "featured_collection",
     "brand_story",
+    "editorial_story_2",
+    "brand_values_cols",
     "social_proof",
     "newsletter"
   ]
