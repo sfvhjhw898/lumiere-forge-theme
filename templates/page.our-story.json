@@ -13,7 +13,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>LUMIÈRE is a luxury beauty & skincare brand with a minimal luxury clean french aesthetic.</p>",
+            "text": "<p>Luxury skincare where science meets ritual.</p>",
             "text_style": "body"
           }
         }
@@ -43,8 +43,8 @@
         "col_1": {
           "type": "column",
           "settings": {
-            "title": "clean beauty",
-            "text": "We put clean beauty first in every decision we make."
+            "title": "minimal",
+            "text": "We put minimal first in every decision we make."
           }
         },
         "col_2": {
@@ -57,7 +57,7 @@
         "col_3": {
           "type": "column",
           "settings": {
-            "title": "minimalist",
+            "title": "clean",
             "text": "We are transparent about how we make things and who we make them for."
           }
         }
@@ -86,7 +86,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "\"Premium luxury beauty & skincare with a minimal design philosophy.\"",
+            "heading": "\"Clinically Proven · Hand-Crafted · Zero Compromise · Science-Backed\"",
             "heading_size": "h2"
           }
         }
