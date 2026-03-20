@@ -1,51 +1,16 @@
 {
   "sections": {
     "forge_hero": {
-      "type": "image-banner",
+      "type": "forge-scroll-hero",
       "settings": {
-        "image_overlay_opacity": 0,
-        "image_height": "large",
-        "image_behavior": "none",
-        "show_text_box": true,
-        "desktop_content_position": "middle-left",
-        "desktop_content_alignment": "left",
-        "color_scheme": "scheme-1",
-        "mobile_content_alignment": "left",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
-      },
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Where Science Meets Ritual.",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "minimal · luxury · clean — made for Discerning women aged 30-55 who invest.",
-            "text_style": "subtitle"
-          }
-        },
-        "buttons": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop Skincare",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": false,
-            "button_label_2": "Our Story →",
-            "button_link_2": "shopify://pages/our-story",
-            "button_style_secondary_2": true
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text",
-        "buttons"
-      ]
+        "heading": "Where Science Meets Ritual.",
+        "subheading": "minimal · luxury · clean — made for Discerning women aged 30-55 who invest.",
+        "scroll_hint": "Scroll to explore",
+        "button_label_1": "Shop Skincare",
+        "button_link_1": "shopify://collections/all",
+        "button_label_2": "Our Story",
+        "button_link_2": "shopify://pages/our-story"
+      }
     },
     "brand_values": {
       "type": "rich-text",
@@ -69,98 +34,31 @@
         "padding_bottom": 24
       }
     },
-    "forge_showcase": {
-      "type": "multicolumn",
-      "blocks": {
-        "stack_1": {
-          "type": "column",
-          "settings": {
-            "title": "Skincare",
-            "text": "Explore our skincare — the latest from LUMIÈRE."
-          }
-        },
-        "stack_2": {
-          "type": "column",
-          "settings": {
-            "title": "Body Care",
-            "text": "The body care range. Core pieces worth keeping."
-          }
-        },
-        "stack_3": {
-          "type": "column",
-          "settings": {
-            "title": "Gift Sets",
-            "text": "Perfectly presented gifts from LUMIÈRE."
-          }
-        }
-      },
-      "block_order": [
-        "stack_1",
-        "stack_2",
-        "stack_3"
-      ],
+    "forge_bento": {
+      "type": "forge-bento",
       "settings": {
-        "title": "Shop the Range",
-        "heading_size": "h2",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "background_style": "none",
-        "button_label": "View All",
-        "button_link": "shopify://collections/all",
-        "color_scheme": "scheme-3",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
+        "heading": "The Science of Skin",
+        "subheading": "LUMIÈRE — minimal, luxury, clean.",
+        "story_link": "shopify://pages/our-story",
         "padding_top": 72,
-        "padding_bottom": 72
-      }
-    },
-    "forge_features": {
-      "type": "multicolumn",
-      "blocks": {
-        "col_1": {
-          "type": "column",
-          "settings": {
-            "title": "Minimal",
-            "text": "LUMIÈRE starts with minimal as the foundation for everything we do."
-          }
-        },
-        "col_2": {
-          "type": "column",
-          "settings": {
-            "title": "Luxury",
-            "text": "Every luxury product is built with luxury at the centre."
-          }
-        },
-        "col_3": {
-          "type": "column",
-          "settings": {
-            "title": "Clean",
-            "text": "clean matters. We don't ship anything we wouldn't keep for ourselves."
-          }
-        }
-      },
-      "block_order": [
-        "col_1",
-        "col_2",
-        "col_3"
-      ],
-      "settings": {
-        "title": "The Science of Skin",
-        "heading_size": "h2",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 72,
-        "padding_bottom": 72
+        "padding_bottom": 72,
+        "cell_1_eyebrow": "The Science of Beauty",
+        "cell_1_heading": "Clinical Results, Luxurious Ritual.",
+        "cell_1_body": "LUMIÈRE formulas combine cutting-edge dermatology with the finest natural actives. Every product is clinically tested, dermatologist approved, and designed to transform your skin.",
+        "cell_1_cta": "Our Formulation Philosophy →",
+        "cell_2_heading": "Clinically Proven",
+        "cell_2_body": "Every formula validated by independent clinical trials. Results you can measure, not just feel.",
+        "cell_3_stat": "94%",
+        "cell_3_stat_label": "Visible Results",
+        "cell_3_body": "94% of clinical trial participants reported visibly improved skin after 28 days.",
+        "cell_4_heading": "Cruelty-Free",
+        "cell_4_body": "Zero compromise on ethics. Every LUMIÈRE product is cruelty-free and sustainably packaged.",
+        "cell_5_heading": "Hand-Crafted",
+        "cell_5_body": "Made to order in small batches for guaranteed freshness and potency.",
+        "pill_1": "Free Sample Included",
+        "pill_2": "30-Day Returns",
+        "pill_3": "Dermatologist Tested",
+        "pill_4": "No Harmful Chemicals"
       }
     },
     "featured_collection": {
@@ -191,126 +89,43 @@
         "padding_bottom": 56
       }
     },
-    "brand_story": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Science-Backed. Nature-Led.",
-            "heading_size": "h2"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>LUMIÈRE was built on a simple idea: minimal and luxury shouldn't be mutually exclusive. Read about how we got here.</p>",
-            "text_style": "body"
-          }
-        },
-        "button": {
-          "type": "button",
-          "settings": {
-            "button_label": "Read Our Story",
-            "button_link": "shopify://pages/our-story",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
-      "settings": {
-        "height": "medium",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "color_scheme": "scheme-1",
-        "section_color_scheme": "scheme-2",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 64,
-        "padding_bottom": 64
-      }
-    },
-    "editorial_story_2": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Ritual, Not Routine.",
-            "heading_size": "h2"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Clean design doesn't happen by accident. Every decision at LUMIÈRE starts with the question: does this make it better?</p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
-      "settings": {
-        "height": "medium",
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "color_scheme": "scheme-3",
-        "section_color_scheme": "scheme-3",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 64,
-        "padding_bottom": 64
-      }
-    },
-    "brand_values_cols": {
+    "social_proof": {
       "type": "multicolumn",
       "blocks": {
-        "val_1": {
+        "col_1": {
           "type": "column",
           "settings": {
-            "title": "Minimal",
-            "text": "We don't cut corners. Minimal is the baseline, not the exception."
+            "title": "\"My skin has never looked better.\"",
+            "text": "<p>LUMIÈRE transformed my morning ritual. Clinical results I can actually see — in weeks, not months.</p><p><em>— Sarah M., Verified Customer</em></p>"
           }
         },
-        "val_2": {
+        "col_2": {
           "type": "column",
           "settings": {
-            "title": "Luxury",
-            "text": "Every piece reflects the attention that LUMIÈRE puts into its work."
+            "title": "\"Worth every penny.\"",
+            "text": "<p>I've tried every luxury brand out there. LUMIÈRE is the one I keep coming back to. The science is real.</p><p><em>— Emma K., Verified Customer</em></p>"
           }
         },
-        "val_3": {
+        "col_3": {
           "type": "column",
           "settings": {
-            "title": "Clean",
-            "text": "Purpose-led from the first sketch. Nothing ships without reason."
+            "title": "\"Dermatologist approved.\"",
+            "text": "<p>As a dermatologist, I recommend LUMIÈRE to my patients. The formulations are genuinely clinically rigorous.</p><p><em>— Dr. Rebecca T., Dermatologist</em></p>"
           }
         }
       },
       "block_order": [
-        "val_1",
-        "val_2",
-        "val_3"
+        "col_1",
+        "col_2",
+        "col_3"
       ],
       "settings": {
-        "title": "What LUMIÈRE Stands For",
+        "title": "What Our Customers Say",
         "heading_size": "h2",
         "image_width": "third",
         "image_ratio": "adapt",
         "columns_desktop": 3,
-        "column_alignment": "left",
+        "column_alignment": "center",
         "background_style": "none",
         "button_label": "",
         "button_link": "",
@@ -321,34 +136,42 @@
         "padding_bottom": 72
       }
     },
-    "social_proof": {
-      "type": "rich-text",
+    "forge_collections": {
+      "type": "forge-collection-cards",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "card_1": {
+          "type": "collection_card",
           "settings": {
-            "heading": "\"My skin has never looked better. Completely obsessed.\"",
-            "heading_size": "h2"
+            "fallback_title": "Skincare",
+            "tagline": "Explore our skincare — the latest from LUMIÈRE."
           }
         },
-        "text": {
-          "type": "text",
+        "card_2": {
+          "type": "collection_card",
           "settings": {
-            "text": "<p>— Verified customer, LUMIÈRE</p>"
+            "fallback_title": "Body Care",
+            "tagline": "The body care range. Core pieces worth keeping."
+          }
+        },
+        "card_3": {
+          "type": "collection_card",
+          "settings": {
+            "fallback_title": "Gift Sets",
+            "tagline": "Perfectly presented gifts from LUMIÈRE."
           }
         }
       },
       "block_order": [
-        "heading",
-        "text"
+        "card_1",
+        "card_2",
+        "card_3"
       ],
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "full_width": false,
-        "padding_top": 80,
-        "padding_bottom": 80
+        "heading": "Shop the Range",
+        "subheading": "Explore everything LUMIÈRE has to offer.",
+        "color_scheme": "scheme-1",
+        "padding_top": 72,
+        "padding_bottom": 72
       }
     },
     "newsletter": {
@@ -383,13 +206,10 @@
   "order": [
     "forge_hero",
     "brand_values",
-    "forge_showcase",
-    "forge_features",
+    "forge_bento",
     "featured_collection",
-    "brand_story",
-    "editorial_story_2",
-    "brand_values_cols",
     "social_proof",
+    "forge_collections",
     "newsletter"
   ]
 }
