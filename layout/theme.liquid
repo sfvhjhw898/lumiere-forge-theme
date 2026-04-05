@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="js" lang="{{ request.locale.iso_code }}">
+<html class="js" lang="{{ request.locale.iso_code }}" data-forge-cursor="true" data-forge-intro="true">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -306,10 +306,12 @@
   {{ 'forge-brand-base.css' | asset_url | stylesheet_tag }}
   {{ 'lumière-brand.css' | asset_url | stylesheet_tag }}
 
-  <!-- FORGE Generated Theme v2.0 | LUMIÈRE | 2026-03-21 -->
+  <!-- FORGE Generated Theme v2.0 | LUMIÈRE | 2026-04-05 -->
+<style id="forge-cursor-vars">:root{--forge-cursor-colour:#F7F3EE;--forge-cursor-blend:normal;}</style>
 </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
+<div data-forge-intro-overlay style="position:fixed;inset:0;background:#F7F3EE;z-index:99998;clip-path:inset(0% 0% 0% 0%);pointer-events:none;"></div>
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
@@ -386,5 +388,8 @@
   
   <!-- FORGE: Scroll Reveal -->
   <script src="{{ 'forge-scroll-reveal.js' | asset_url }}" defer></script>
+
+  <!-- FORGE: Micro-Interactions (GSAP) -->
+  <script src="{{ 'forge-interactions.js' | asset_url }}" defer></script>
 </body>
 </html>
