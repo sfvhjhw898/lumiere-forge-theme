@@ -1,0 +1,283 @@
+{%- assign cv = product.selected_or_first_available_variant -%}
+
+<div class="lp-wrap">
+
+  <div class="lp-gallery">
+    <div class="lp-gallery__main">
+      {%- if product.featured_image -%}
+        <img id="lp-hero"
+          src="{{ product.featured_image | image_url: width: 1200 }}"
+          alt="{{ product.featured_image.alt | escape }}"
+          loading="eager" width="1200" height="1600" class="lp-hero-img">
+      {%- else -%}
+        {{ 'product-1' | placeholder_svg_tag: 'lp-hero-img' }}
+      {%- endif -%}
+    </div>
+    {%- if product.images.size > 1 -%}
+      <div class="lp-gallery__strip">
+        {%- for image in product.images limit: 4 -%}
+          <button class="lp-strip-btn{% if forloop.first %} lp-strip-btn--active{% endif %}"
+            data-src="{{ image | image_url: width: 1200 }}" type="button">
+            <img src="{{ image | image_url: width: 240 }}" alt="{{ image.alt | escape }}" loading="lazy">
+          </button>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div class="lp-details">
+    <div class="lp-details__inner">
+      <p class="lp-cat">{{ product.type | default: 'Ready to Wear' | upcase }}</p>
+      <h1 class="lp-title">{{ product.title | upcase }}</h1>
+      <div class="lp-price-row">
+        <span class="lp-price">{{ cv.price | money }}</span>
+        {%- if cv.compare_at_price > cv.price -%}
+          <span class="lp-was">{{ cv.compare_at_price | money }}</span>
+        {%- endif -%}
+        <span class="lp-material">{{ product.vendor }}</span>
+      </div>
+      <div class="lp-desc">{{ product.description }}</div>
+
+      {%- form 'product', product, id: 'lp-form' -%}
+        {%- for option in product.options_with_values -%}
+          <div class="lp-opt">
+            <p class="lp-opt__label">{{ option.name | upcase }}</p>
+            {%- if option.name == 'Color' or option.name == 'Colour' -%}
+              <div class="lp-color-labels">
+                {%- for value in option.values -%}
+                  <label class="lp-color-label">
+                    <input type="radio" name="option[{{ option.position }}]" value="{{ value }}"
+                      {% if option.selected_value == value %}checked{% endif %}>
+                    <span>{{ value | upcase }}</span>
+                  </label>
+                {%- endfor -%}
+              </div>
+            {%- else -%}
+              <div class="lp-size-pills">
+                {%- for value in option.values -%}
+                  <label class="lp-sz">
+                    <input type="radio" name="option[{{ option.position }}]" value="{{ value }}"
+                      {% if option.selected_value == value %}checked{% endif %}>
+                    <span>{{ value }}</span>
+                  </label>
+                {%- endfor -%}
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+        <input type="hidden" name="id" value="{{ cv.id }}">
+        <div class="lp-actions">
+          <button type="submit" name="add" class="lp-btn lp-btn--primary">
+            ADD TO CART &#9654;
+          </button>
+          <a href="{{ routes.collections_url }}" class="lp-btn lp-btn--secondary">CONTINUE SHOPPING</a>
+        </div>
+      {%- endform -%}
+
+      <div class="lp-accordion">
+        <details class="lp-detail">
+          <summary class="lp-detail__trigger">SHIPPING <span>&#9654;</span></summary>
+          <div class="lp-detail__body">Complimentary shipping on all orders over £150. Express delivery available at checkout. Items dispatched within 2 business days.</div>
+        </details>
+        <details class="lp-detail">
+          <summary class="lp-detail__trigger">RETURNS <span>&#9654;</span></summary>
+          <div class="lp-detail__body">Free returns within 30 days of delivery. Items must be unworn, unaltered, and in original packaging with all tags attached.</div>
+        </details>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<style>
+.lp-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  background: #fff;
+}
+.lp-gallery {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.lp-gallery__main {
+  flex: 1;
+  overflow: hidden;
+}
+.lp-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: opacity .3s;
+}
+.lp-gallery__strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  padding: 2px;
+  background: #fff;
+}
+.lp-strip-btn {
+  border: 2px solid transparent;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  transition: border-color .2s;
+}
+.lp-strip-btn--active, .lp-strip-btn:hover { border-color: #111; }
+.lp-strip-btn img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+.lp-details {
+  overflow-y: auto;
+  padding: 64px 56px;
+}
+.lp-details__inner {
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.lp-cat {
+  font-size: 10px;
+  letter-spacing: .2em;
+  color: #aaa;
+  margin: 0;
+}
+.lp-title {
+  font-family: 'Arial Black', 'Impact', sans-serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 900;
+  line-height: .95;
+  letter-spacing: -.01em;
+  margin: 0;
+  color: #111;
+}
+.lp-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.lp-price { font-size: 24px; font-weight: 700; color: #111; }
+.lp-was { font-size: 16px; color: #aaa; text-decoration: line-through; }
+.lp-material {
+  margin-left: auto;
+  font-size: 10px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #aaa;
+}
+.lp-desc {
+  font-size: 13px;
+  line-height: 1.75;
+  color: #555;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+.lp-opt { }
+.lp-opt__label {
+  font-size: 10px;
+  letter-spacing: .18em;
+  font-weight: 700;
+  color: #888;
+  margin: 0 0 12px;
+}
+.lp-color-labels { display: flex; gap: 8px; flex-wrap: wrap; }
+.lp-color-label input { display: none; }
+.lp-color-label span {
+  display: block;
+  padding: 6px 16px;
+  border: 1px solid #ddd;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  cursor: pointer;
+  transition: all .15s;
+}
+.lp-color-label input:checked + span { background: #111; color: #fff; border-color: #111; }
+.lp-size-pills { display: flex; gap: 6px; flex-wrap: wrap; }
+.lp-sz input { display: none; }
+.lp-sz span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px; height: 48px;
+  border: 2px solid #ddd;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .15s;
+}
+.lp-sz input:checked + span { background: #111; color: #fff; border-color: #111; }
+.lp-sz span:hover { border-color: #111; }
+.lp-actions { display: flex; flex-direction: column; gap: 10px; }
+.lp-btn {
+  padding: 16px 24px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid #111;
+  transition: all .2s;
+  display: block;
+}
+.lp-btn--primary { background: #111; color: #fff; }
+.lp-btn--primary:hover { background: #333; }
+.lp-btn--secondary { background: transparent; color: #111; }
+.lp-btn--secondary:hover { background: #111; color: #fff; }
+.lp-accordion { border-top: 1px solid #eee; }
+.lp-detail { border-bottom: 1px solid #eee; }
+.lp-detail__trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .15em;
+  list-style: none;
+  user-select: none;
+}
+.lp-detail__trigger::-webkit-details-marker { display: none; }
+.lp-detail__body {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #666;
+  padding-bottom: 16px;
+}
+@media (max-width: 900px) {
+  .lp-wrap { grid-template-columns: 1fr; }
+  .lp-gallery { position: relative; height: auto; }
+  .lp-gallery__main { height: 70vw; }
+  .lp-details { padding: 40px 24px; }
+}
+</style>
+
+<script>
+(function(){
+  var hero = document.getElementById('lp-hero');
+  document.querySelectorAll('.lp-strip-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if (hero) hero.src = this.dataset.src;
+      document.querySelectorAll('.lp-strip-btn').forEach(function(b){ b.classList.remove('lp-strip-btn--active'); });
+      this.classList.add('lp-strip-btn--active');
+    });
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "LUMIERE Product",
+  "tag": "section",
+  "class": "forge-product-lumiere"
+}
+{% endschema %}
