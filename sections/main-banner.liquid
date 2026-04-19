@@ -1,13 +1,16 @@
-{% comment %}
-  LUMIÈRE — Main Banner Section
-  Centred product showcase hero with spa-like stillness
-{% endcomment %}
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --section-bg: #F7F3EE;
+    --section-text: #2C2C2C;
+    --section-accent: #C9A96E;
+    --section-text-muted: rgba(44, 44, 44, 0.55);
+    --section-text-light: rgba(44, 44, 44, 0.4);
+  }
 
-<style>
-  .forge-banner {
+  .forge-banner-main {
     min-height: 100vh;
     min-height: 100dvh;
-    background: #F7F3EE;
+    background: var(--section-bg);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,7 +18,6 @@
     padding: 0 4rem;
     text-align: center;
     position: relative;
-    overflow: hidden;
   }
 
   .forge-banner__eyebrow {
@@ -24,7 +26,7 @@
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.18em;
-    color: rgba(44, 44, 44, 0.4);
+    color: var(--section-text-light);
     margin-bottom: 3.2rem;
     opacity: 0;
     animation: forge-banner-fade-in 0.6s ease 0.2s forwards;
@@ -32,18 +34,15 @@
 
   .forge-banner__heading {
     margin: 0;
-    padding: 0;
+    line-height: 1.1;
   }
 
   .forge-banner__heading-line {
+    display: block;
     font-family: var(--forge-font-heading);
     font-size: clamp(3.6rem, 7vw, 7.5rem);
-    color: #2C2C2C;
+    color: var(--section-text);
     letter-spacing: -0.02em;
-    line-height: 1.1;
-    margin: 0;
-    padding: 0;
-    display: block;
     clip-path: inset(0 100% 0 0);
   }
 
@@ -55,14 +54,13 @@
 
   .forge-banner__heading-line--bold {
     font-weight: 600;
-    font-style: normal;
     animation: forge-banner-reveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
   }
 
   .forge-banner__divider {
     width: 40px;
     height: 1px;
-    background: #C9A96E;
+    background: var(--section-accent);
     opacity: 0.5;
     margin: 2rem auto 1.2rem;
   }
@@ -71,26 +69,32 @@
     font-family: var(--forge-font-body);
     font-weight: 300;
     font-size: 15px;
-    color: rgba(44, 44, 44, 0.55);
+    color: var(--section-text-muted);
     max-width: 42ch;
     line-height: 1.65;
-    margin: 0 auto 1.2rem;
+    margin: 0 auto;
   }
 
   .forge-banner__product {
     margin: 3.2rem auto 0;
     position: relative;
     max-width: 240px;
-    width: 100%;
   }
 
   .forge-banner__product-image {
     width: 100%;
     aspect-ratio: 3 / 4;
-    object-fit: cover;
     border-radius: 4px;
+    overflow: hidden;
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.08);
     animation: forge-breathe 6s ease infinite;
+  }
+
+  .forge-banner__product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   .forge-banner__cta {
@@ -103,7 +107,7 @@
     font-weight: 500;
     font-size: 14px;
     letter-spacing: 0.04em;
-    color: #2C2C2C;
+    color: var(--section-text);
     background: transparent;
     border: 1px solid rgba(44, 44, 44, 0.3);
     padding: 13px 32px;
@@ -139,8 +143,8 @@
     }
   }
 
-  @media (max-width: 768px) {
-    .forge-banner {
+  @media screen and (max-width: 749px) {
+    .forge-banner-main {
       padding: 0 2rem;
     }
 
@@ -149,52 +153,50 @@
       margin-bottom: 2.4rem;
     }
 
-    .forge-banner__heading-line {
-      font-size: clamp(2.8rem, 10vw, 3.6rem);
+    .forge-banner__divider {
+      margin: 1.6rem auto 1rem;
     }
 
     .forge-banner__subheading {
       font-size: 14px;
-      max-width: 32ch;
     }
 
     .forge-banner__product {
-      max-width: 200px;
       margin-top: 2.4rem;
+      max-width: 200px;
     }
 
     .forge-banner__cta {
-      margin-top: 2rem;
+      margin-top: 2.4rem;
     }
 
     .forge-banner__button {
       font-size: 13px;
-      padding: 11px 28px;
+      padding: 12px 28px;
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .forge-banner__eyebrow,
     .forge-banner__heading-line,
+    .forge-banner__eyebrow,
     .forge-banner__product-image {
       animation: none;
       opacity: 1;
       clip-path: none;
-      transform: none;
     }
   }
-</style>
+{%- endstyle -%}
 
-<section class="forge-banner">
+<section class="forge-banner-main">
   <div class="forge-banner__eyebrow">
     {{ section.settings.eyebrow | default: 'Luxury Skincare · Est. 2024' }}
   </div>
 
   <h1 class="forge-banner__heading">
-    <span class="forge-banner__heading-line forge-banner__heading-line--light" data-forge-split="words" data-forge-split-anim="reveal">
+    <span class="forge-banner__heading-line forge-banner__heading-line--light">
       {{ section.settings.heading_line1 | default: 'Where Science' }}
     </span>
-    <span class="forge-banner__heading-line forge-banner__heading-line--bold" data-forge-split="words" data-forge-split-anim="reveal">
+    <span class="forge-banner__heading-line forge-banner__heading-line--bold">
       {{ section.settings.heading_line2 | default: 'Meets Ritual.' }}
     </span>
   </h1>
@@ -207,40 +209,42 @@
 
   <div class="forge-banner__divider"></div>
 
-  <div class="forge-banner__product">
-    {%- if section.settings.hero_product != blank -%}
-      {%- assign hero_product = all_products[section.settings.hero_product] -%}
-      {%- if hero_product.featured_image -%}
-        <img
-          src="{{ hero_product.featured_image | image_url: width: 500 }}"
-          srcset="{{ hero_product.featured_image | image_url: width: 300 }} 300w,
-                  {{ hero_product.featured_image | image_url: width: 500 }} 500w,
-                  {{ hero_product.featured_image | image_url: width: 700 }} 700w"
-          sizes="(max-width: 768px) 200px, 240px"
-          alt="{{ hero_product.featured_image.alt | default: hero_product.title }}"
-          class="forge-banner__product-image"
-          width="500"
-          height="667"
-          loading="eager"
-          fetchpriority="high"
-        >
-      {%- endif -%}
-    {%- elsif section.settings.image -%}
-      <img
-        src="{{ section.settings.image | image_url: width: 500 }}"
-        srcset="{{ section.settings.image | image_url: width: 300 }} 300w,
-                {{ section.settings.image | image_url: width: 500 }} 500w,
-                {{ section.settings.image | image_url: width: 700 }} 700w"
-        sizes="(max-width: 768px) 200px, 240px"
-        alt="{{ section.settings.image.alt | escape }}"
-        class="forge-banner__product-image"
-        width="500"
-        height="667"
-        loading="eager"
-        fetchpriority="high"
-      >
-    {%- endif -%}
-  </div>
+  {%- if section.settings.hero_product != blank or section.settings.image -%}
+    <div class="forge-banner__product">
+      <div class="forge-banner__product-image">
+        {%- if section.settings.hero_product != blank -%}
+          {%- assign hero_product = all_products[section.settings.hero_product] -%}
+          {%- if hero_product.featured_image -%}
+            <img
+              src="{{ hero_product.featured_image | image_url: width: 500 }}"
+              srcset="{{ hero_product.featured_image | image_url: width: 240 }} 240w,
+                      {{ hero_product.featured_image | image_url: width: 480 }} 480w,
+                      {{ hero_product.featured_image | image_url: width: 500 }} 500w"
+              sizes="(max-width: 749px) 200px, 240px"
+              alt="{{ hero_product.featured_image.alt | default: hero_product.title }}"
+              width="500"
+              height="667"
+              loading="eager"
+              fetchpriority="high"
+            >
+          {%- endif -%}
+        {%- elsif section.settings.image -%}
+          <img
+            src="{{ section.settings.image | image_url: width: 500 }}"
+            srcset="{{ section.settings.image | image_url: width: 240 }} 240w,
+                    {{ section.settings.image | image_url: width: 480 }} 480w,
+                    {{ section.settings.image | image_url: width: 500 }} 500w"
+            sizes="(max-width: 749px) 200px, 240px"
+            alt="{{ section.settings.image.alt | escape }}"
+            width="500"
+            height="667"
+            loading="eager"
+            fetchpriority="high"
+          >
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
 
   {%- if section.settings.button_label != blank -%}
     <div class="forge-banner__cta">
@@ -264,19 +268,19 @@
     {
       "type": "text",
       "id": "eyebrow",
-      "label": "Eyebrow Text",
+      "label": "Eyebrow text",
       "default": "Luxury Skincare · Est. 2024"
     },
     {
       "type": "text",
       "id": "heading_line1",
-      "label": "Heading Line 1",
+      "label": "Heading line 1",
       "default": "Where Science"
     },
     {
       "type": "text",
       "id": "heading_line2",
-      "label": "Heading Line 2",
+      "label": "Heading line 2",
       "default": "Meets Ritual."
     },
     {
@@ -288,24 +292,24 @@
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Product Image"
+      "label": "Product image"
     },
     {
       "type": "product",
       "id": "hero_product",
-      "label": "Hero Product",
-      "info": "If selected, will use product's featured image instead of uploaded image"
+      "label": "Hero product",
+      "info": "If selected, this will override the image picker above"
     },
     {
       "type": "text",
       "id": "button_label",
-      "label": "Button Label",
+      "label": "Button label",
       "default": "Discover the Collection"
     },
     {
       "type": "url",
       "id": "button_link",
-      "label": "Button Link",
+      "label": "Button link",
       "default": "/collections/all"
     }
   ],

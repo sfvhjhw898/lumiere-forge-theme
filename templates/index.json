@@ -1,80 +1,240 @@
 {
   "sections": {
-    "lumiere_hero": {
-      "type": "lumiere-hero",
+    "forge_hero": {
+      "type": "main-banner",
       "settings": {
-        "eyebrow": "Clean Luxury Skincare",
-        "heading": "Your most luminous skin.",
-        "subheading": "Clinically validated formulas, beautifully made. Founded in Paris.",
-        "btn_1_label": "Shop Skincare",
-        "btn_1_url": "shopify://collections/all",
-        "btn_2_label": "Our Rituals",
-        "btn_2_url": "shopify://pages/our-story",
-        "badge_1": "Cruelty Free",
-        "badge_2": "Dermatologist Tested",
-        "badge_3": "Clean Ingredients"
+        "heading": "Where Science Meets Ritual.",
+        "subheading": "clean beauty · luxury · minimalist — made for Discerning women aged 30-55 who invest.",
+        "scroll_hint": "Scroll to explore",
+        "button_label_1": "Shop Skincare",
+        "button_link_1": "shopify://collections/all",
+        "button_label_2": "Our Story",
+        "button_link_2": "shopify://pages/our-story"
       }
     },
-    "lumiere_ritual": {
-      "type": "lumiere-ritual",
-      "settings": {
-        "eyebrow": "The Method",
-        "heading": "Your Daily Ritual",
-        "subheading": "Four steps. Five minutes. Transformative results.",
-        "cta_label": "Shop Skincare",
-        "cta_url": "shopify://collections/all"
-      },
+    "forge_ticker": {
+      "type": "forge-ticker-section",
       "blocks": {
-        "s1": { "type": "step", "settings": { "name": "Cleanse",    "time": "60 sec", "desc": "Apply gently to damp skin with circular motions. Rinse with cool water." } },
-        "s2": { "type": "step", "settings": { "name": "Tone",       "time": "30 sec", "desc": "Press toner into skin with clean palms — never rub." } },
-        "s3": { "type": "step", "settings": { "name": "Serum",      "time": "90 sec", "desc": "3–4 drops warmed between fingers. Press into face and neck." } },
-        "s4": { "type": "step", "settings": { "name": "Moisturise", "time": "45 sec", "desc": "Seal everything in. Work upward and outward from the centre." } }
+        "item_0": {
+          "type": "item",
+          "settings": {
+            "text": "LUMIÈRE"
+          }
+        },
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "text": "New Collection"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "text": "Pre-Order Now"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "text": "clean beauty"
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "text": "New Season"
+          }
+        }
       },
-      "block_order": ["s1", "s2", "s3", "s4"]
+      "block_order": [
+        "item_0",
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "speed": 55,
+        "direction": "ltr"
+      }
+    },
+    "forge_bento": {
+      "type": "forge-bento",
+      "settings": {
+        "heading": "The Science of Skin",
+        "subheading": "LUMIÈRE — clean beauty, luxury, minimalist.",
+        "story_link": "shopify://pages/our-story",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "cell_1_eyebrow": "The Science of Beauty",
+        "cell_1_heading": "Clinical Results, Luxurious Ritual.",
+        "cell_1_body": "LUMIÈRE formulas combine cutting-edge dermatology with the finest natural actives. Every product is clinically tested, dermatologist approved, and designed to transform your skin.",
+        "cell_1_cta": "Our Formulation Philosophy →",
+        "cell_2_heading": "Clinically Proven",
+        "cell_2_body": "Every formula validated by independent clinical trials. Results you can measure, not just feel.",
+        "cell_3_stat": "94%",
+        "cell_3_stat_label": "Visible Results",
+        "cell_3_body": "94% of clinical trial participants reported visibly improved skin after 28 days.",
+        "cell_4_heading": "Cruelty-Free",
+        "cell_4_body": "Zero compromise on ethics. Every LUMIÈRE product is cruelty-free and sustainably packaged.",
+        "cell_5_heading": "Hand-Crafted",
+        "cell_5_body": "Made to order in small batches for guaranteed freshness and potency.",
+        "pill_1": "Free Sample Included",
+        "pill_2": "30-Day Returns",
+        "pill_3": "Dermatologist Tested",
+        "pill_4": "No Harmful Chemicals"
+      }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "The Collection",
+        "title": "Best Sellers",
         "heading_size": "h2",
+        "description": "<p>Our best-selling luxury — made with clean beauty.</p>",
+        "show_description": true,
+        "description_style": "subtitle",
         "collection": "all",
         "products_to_show": 8,
         "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
         "color_scheme": "scheme-1",
         "image_ratio": "portrait",
-        "padding_top": 72,
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 64,
         "padding_bottom": 56
       }
     },
-    "lumiere_ingredients": {
-      "type": "lumiere-ingredients",
-      "settings": { "eyebrow": "The Formula", "heading": "Ingredients that work." },
+    "social_proof": {
+      "type": "multicolumn",
       "blocks": {
-        "i1": { "type": "ingredient", "settings": { "icon": "drop",    "name": "Hyaluronic Acid", "origin": "Bio-fermented",        "description": "Draws and retains moisture at three depths of the skin.", "concentration": "2%" } },
-        "i2": { "type": "ingredient", "settings": { "icon": "leaf",    "name": "Bakuchiol",       "origin": "Psoralea corylifolia", "description": "Plant-derived retinol alternative. All the results, none of the sensitivity.", "concentration": "1%" } },
-        "i3": { "type": "ingredient", "settings": { "icon": "crystal", "name": "Niacinamide",     "origin": "Vitamin B3",           "description": "Brightens, minimises pores, and strengthens the skin barrier.", "concentration": "10%" } }
+        "col_1": {
+          "type": "column",
+          "settings": {
+            "title": "\"My skin has never looked better.\"",
+            "text": "<p>LUMIÈRE transformed my morning ritual. Clinical results I can actually see — in weeks, not months.</p><p><em>— Sarah M., Verified Customer</em></p>"
+          }
+        },
+        "col_2": {
+          "type": "column",
+          "settings": {
+            "title": "\"Worth every penny.\"",
+            "text": "<p>I've tried every luxury brand out there. LUMIÈRE is the one I keep coming back to. The science is real.</p><p><em>— Emma K., Verified Customer</em></p>"
+          }
+        },
+        "col_3": {
+          "type": "column",
+          "settings": {
+            "title": "\"Dermatologist approved.\"",
+            "text": "<p>As a dermatologist, I recommend LUMIÈRE to my patients. The formulations are genuinely clinically rigorous.</p><p><em>— Dr. Rebecca T., Dermatologist</em></p>"
+          }
+        }
       },
-      "block_order": ["i1", "i2", "i3"]
+      "block_order": [
+        "col_1",
+        "col_2",
+        "col_3"
+      ],
+      "settings": {
+        "title": "What Our Customers Say",
+        "heading_size": "h2",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
     },
-    "lumiere_quotes": {
-      "type": "lumiere-quotes",
-      "settings": { "eyebrow": "Real Results", "heading": "What our clients say." },
+    "forge_collections": {
+      "type": "forge-collection-cards",
       "blocks": {
-        "q1": { "type": "quote", "settings": { "text": "My skin has completely transformed in 6 weeks.", "name": "Sophie L.",  "role": "Verified Buyer · Paris",  "show_stars": true } },
-        "q2": { "type": "quote", "settings": { "text": "The cleanser alone is worth every penny. My rosacea is calmer than it has been in years.", "name": "Emma W.", "role": "Verified Buyer · London", "show_stars": true } },
-        "q3": { "type": "quote", "settings": { "text": "LUMIÈRE is the first skincare brand that has genuinely changed my skin.", "name": "Camille R.", "role": "Verified Buyer · Milan", "show_stars": true } }
+        "card_1": {
+          "type": "collection_card",
+          "settings": {
+            "fallback_title": "Skincare",
+            "tagline": "Explore our skincare — the latest from LUMIÈRE."
+          }
+        },
+        "card_2": {
+          "type": "collection_card",
+          "settings": {
+            "fallback_title": "Body Care",
+            "tagline": "The body care range. Core pieces worth keeping."
+          }
+        },
+        "card_3": {
+          "type": "collection_card",
+          "settings": {
+            "fallback_title": "Gift Sets",
+            "tagline": "Perfectly presented gifts from LUMIÈRE."
+          }
+        }
       },
-      "block_order": ["q1", "q2", "q3"]
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3"
+      ],
+      "settings": {
+        "heading": "Shop the Range",
+        "subheading": "Explore everything LUMIÈRE has to offer.",
+        "color_scheme": "scheme-1",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
     },
     "newsletter": {
       "type": "newsletter",
       "blocks": {
-        "heading": { "type": "heading",   "settings": { "heading": "Luminous skin starts here.", "heading_size": "h2" } },
-        "sub":     { "type": "paragraph", "settings": { "text": "Skincare rituals, new launches, and exclusive offers." } }
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Stay close to LUMIÈRE.",
+            "heading_size": "h2"
+          }
+        },
+        "subheading": {
+          "type": "paragraph",
+          "settings": {
+            "text": "New arrivals, behind-the-scenes, and early access. No noise."
+          }
+        }
       },
-      "block_order": ["heading", "sub"],
-      "settings": { "color_scheme": "scheme-5", "full_width": true, "padding_top": 56, "padding_bottom": 56 }
+      "block_order": [
+        "heading",
+        "subheading"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "full_width": true,
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
     }
   },
-  "order": ["lumiere_hero", "lumiere_ritual", "featured_collection", "lumiere_ingredients", "lumiere_quotes", "newsletter"]
+  "order": [
+    "forge_hero",
+    "forge_ticker",
+    "forge_bento",
+    "featured_collection",
+    "social_proof",
+    "forge_collections",
+    "newsletter"
+  ]
 }
