@@ -1,7 +1,7 @@
 {
   "sections": {
     "forge_hero": {
-      "type": "main-banner",
+      "type": "forge-scroll-hero",
       "settings": {
         "heading": "Where Science Meets Ritual.",
         "subheading": "clean beauty · luxury · minimalist — made for Discerning women aged 30-55 who invest.",
